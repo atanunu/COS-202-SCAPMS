@@ -121,7 +121,7 @@ if "--report-only" in sys.argv:
     run.append(text)
     link.append(run)
     p._p.append(link)
-    paragraph("The private repository contains src/ for C++ headers and implementation, data/ for fictional input files, tests/ for automated checks, scripts/ for build tools, output/screenshots/ for GUI evidence and docs/diagrams/ for UML source, PNG and PDF. Access must be granted to the assessor.")
+    paragraph("The public repository contains src/ for C++ headers and implementation, data/ for fictional input files, tests/ for automated checks, scripts/ for build tools, output/screenshots/ for GUI evidence and docs/diagrams/ for UML source, PNG and PDF. The assessor can open these materials without signing in.")
     target = out / "SCAPMS-project-report.docx"
     doc.save(target)
     print(target)

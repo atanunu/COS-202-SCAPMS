@@ -106,4 +106,4 @@ Demo data can be regenerated using scripts/make_sample.py and
 scripts/make_benchmark.py; both contain fictional records.
 Runtime notices are in licenses and THIRD_PARTY_NOTICES.md.
 
-The project repository is https://github.com/atanunu/COS-202-SCAPMS (private). Grant the assessor access before submission. The supplied brief asks for supporting materials and a 2–3-page report in one PDF. The standalone report supports the requested GitHub-based handoff, while SCAPMS-assessment.pdf retains the combined submission option.
+The project repository is https://github.com/atanunu/COS-202-SCAPMS (public). Supporting materials can be accessed without signing in. The supplied brief asks for supporting materials and a 2–3-page report in one PDF. The standalone report supports the requested GitHub-based handoff, while SCAPMS-assessment.pdf retains the combined submission option.

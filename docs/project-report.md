@@ -93,6 +93,7 @@ persistence, recovery, algorithms and GUI behaviour are covered. Backup transfer
 computer remains unverified. 
 1.9 PROJECT REPOSITORY 
 https://github.com/atanunu/COS-202-SCAPMS 
-The private repository contains src/ for C++ headers and implementation, data/ for fictional input 
+The public repository contains src/ for C++ headers and implementation, data/ for fictional input 
 files, tests/ for automated checks, scripts/ for build tools, output/screenshots/ for GUI evidence and 
-docs/diagrams/ for UML source, PNG and PDF. Access must be granted to the assessor. 
+docs/diagrams/ for UML source, PNG and PDF. The assessor can open these materials without signing 
+in. 

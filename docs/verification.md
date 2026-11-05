@@ -24,3 +24,5 @@ This is a local assessment application using fictional demonstration data. Norma
 ## Submission structure review on 5 November 2026
 
 The standalone SCAPMS-project-report.docx and its PDF render contain exactly three pages. All three pages were visually inspected. The report covers the twelve required topics and includes a clickable repository URL and a folder guide. Supporting source is in src/, demonstration data in data/, GUI evidence in output/screenshots/ and editable plus rendered UML in docs/diagrams/. The private repository requires assessor access. The supplied brief also asks for all submission materials in one document. The existing SCAPMS-assessment combined document is retained as that option, while the standalone report implements the requested GitHub-based handoff.
+
+On 5 November 2026 the repository was made public at the user's request. Unauthenticated GitHub API access confirmed public visibility. The standalone report was updated to describe public access.
