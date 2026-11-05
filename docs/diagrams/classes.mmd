@@ -1,0 +1,50 @@
+classDiagram
+class PatientRecord {
+  <<abstract>>
+  -PatientDetails details_
+  +category() PatientCategory
+  +consultationSummary() QString
+  +clone() unique_ptr
+}
+class Appointable {
+  <<interface>>
+  +validateScheduling(Appointment)
+  +validateCancellation(Appointment)
+}
+PatientRecord <|-- GeneralPatient
+PatientRecord <|-- EmergencyPatient
+PatientRecord <|-- FollowUpPatient
+Appointable <|.. GeneralPatient
+Appointable <|.. EmergencyPatient
+Appointable <|.. FollowUpPatient
+ClinicDatabase "1" *-- "0..*" PatientRecord : owns
+ClinicDatabase "1" *-- "0..*" Appointment : owns
+PatientRecord "1" -- "0..*" Appointment : patientId
+ClinicDatabase *-- QueueEntry : std::queue
+QueueEntry --> Appointment : optional appointmentId
+ClinicDatabase *-- UserAccount
+ClinicDatabase *-- AuditEntry
+ClinicManager *-- ClinicDatabase
+ClinicManager *-- UndoSnapshot : std::stack
+UndoSnapshot *-- ClinicDatabase : deep snapshot
+MainWindow *-- PanelBase
+PanelBase <|-- PatientsPanel
+PanelBase <|-- AppointmentsPanel
+PanelBase <|-- DashboardPanel
+PanelBase <|-- QueuePanel
+PanelBase <|-- SearchPanel
+PanelBase <|-- ReportsPanel
+PanelBase <|-- AccessPanel
+PanelBase --> ClinicManager
+PatientTableModel --> PatientRecord : non-owning view
+ClinicManager --> AccessControl : role and password checks
+FileHandler --> ClinicDatabase
+FileHandler --> AccessControl : protect and unprotect
+RecoveryService --> FileHandler
+ReportService --> ClinicDatabase
+
+PanelBase <|-- CalendarPanel
+MainWindow *-- WorkspaceGuard
+MainWindow --> PortableBackup : AES GCM backup
+SearchPanel --> Benchmark : repeated comparisons
+CalendarPanel --> ClinicDatabase : clinicians and rooms

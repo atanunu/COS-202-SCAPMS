@@ -1,6 +1,7 @@
 """Create an editable COS 202 submission using the supplied assignment structure."""
 from pathlib import Path
 import textwrap
+import sys
 import xml.etree.ElementTree as ET
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -18,7 +19,7 @@ section.top_margin=Inches(.7);section.bottom_margin=Inches(.65)
 section.left_margin=section.right_margin=Inches(.75)
 section.footer_distance=Inches(.3)
 normal=doc.styles["Normal"]
-normal.font.name="Arial";normal.font.size=Pt(11.5);normal.font.color.rgb=RGBColor(0,0,0)
+normal.font.name="Arial";normal.font.size=Pt(11 if "--report-only" in sys.argv else 11.5);normal.font.color.rgb=RGBColor(0,0,0)
 normal.paragraph_format.line_spacing=1.15
 normal.paragraph_format.space_after=Pt(8)
 normal.paragraph_format.first_line_indent=Inches(.32)
@@ -87,10 +88,10 @@ paragraph("A std::vector of unique_ptr<PatientRecord> owns patients without obje
 paragraph("A std::stack of UndoSnapshot objects stores up to fifty deep snapshots. Candidate transactions are validated before committing; rejected changes preserve live state and undo history. Undo restores the latest record state while retaining existing audit events and adding an Undo entry. Account changes and switching users clear the undo stack.")
 heading("1.4 SEARCHING SORTING AND RECURSION")
 paragraph("Linear search scans IDs and supports name/category filtering. Binary search uses an ID-sorted view prepared by the handwritten merge sort. Lookup costs O(log n); preparing the order costs O(n log n), reported separately in the interface.")
-paragraph("Insertion sort has O(n) best-case and O(n squared) worst-case time. Recursive merge sort is stable with O(n log n) time and O(n) temporary storage. Ranges smaller than two items form its base case; recursive calls sort both halves before merging. Equal keys preserve their original order. Required searching and sorting algorithms are implemented manually.")
+paragraph("Insertion sort has O(n) best-case and O(n squared) worst-case time. Recursive merge sort is stable with O(n log n) time and O(n) temporary storage. Ranges smaller than two items form its base case; recursive calls sort both halves before merging. Equal keys preserve their original order. Insertion sort suits small or nearly sorted lists. Merge sort suits larger lists and provides predictable performance. Required searching and sorting algorithms are implemented manually.")
 paragraph("Both sorts support name, ID and age. The comparison runs sorted, reversed and seeded shuffled input, identical for each algorithm. One warm-up is excluded; five measured runs provide a median. Comparisons, moves and recursion depth supplement timing. A 2,000-record fictional dataset supports demonstrations. Background calculation keeps the interface responsive.")
 heading("1.5 GUI DESIGN AND EVENTS")
-paragraph("VBox, HBox, Grid and Form layouts arrange controls. A QAbstractTableModel adapter presents patients. Signals and slots handle actions, selections and timers. Dynamic subtype fields, date/resource filters, duplicate warnings, validation messages, role-aware tooltips, printing and recovery dialogs support daily workflows. Text scaling, visible empty states and keyboard shortcuts improve usability. Search, sort, selection and scrolling survive updates.")
+paragraph("VBox and HBox arrange the page and action rows. Grid aligns booking controls, while Form pairs labels with fields. These layouts resize controls consistently. A QAbstractTableModel adapter presents patients. Signals and slots handle actions, selections and timers. Dynamic subtype fields, date/resource filters, duplicate warnings, validation messages, role-aware tooltips, printing and recovery dialogs support daily workflows. Text scaling, visible empty states and keyboard shortcuts improve usability. Search, sort, selection and scrolling survive updates.")
 page()
 heading("1.6 VALIDATION SECURITY AND PERSISTENCE",1)
 paragraph("Custom exceptions reject invalid contacts, IDs, ages, times, overlapping bookings, duplicate queue entries and malformed data. New appointments are future-dated; check-in requires the appointment date; completion requires an active consultation and notes. No-show requires a scheduled visit whose end time has passed. Follow-up selection uses a completed visit from the patient's history.")
@@ -106,6 +107,25 @@ if test_file.exists():
     result=ET.parse(test_file).getroot()
     test_summary=f"The final Qt Test run reports {result.get('tests')} results, {result.get('failures')} failures and {result.get('errors')} errors."
 paragraph(test_summary+" Tests cover validation, failed-operation atomicity, visit transitions, permission enforcement, file locking, recovery, encryption, resource conflicts, repeated benchmarks and GUI state. Actual application captures and editable source listings follow.")
+if "--report-only" in sys.argv:
+    doc.paragraphs[-1].text = test_summary + " Validation, workflow, permissions, persistence, recovery, algorithms and GUI behaviour are covered. Backup transfer to a second computer remains unverified."
+    heading("1.9 PROJECT REPOSITORY")
+    p = doc.add_paragraph()
+    p.paragraph_format.first_line_indent = Inches(0)
+    link = OxmlElement("w:hyperlink")
+    rel = doc.part.relate_to("https://github.com/atanunu/COS-202-SCAPMS", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+    link.set(qn("r:id"), rel)
+    run = OxmlElement("w:r")
+    text = OxmlElement("w:t")
+    text.text = "https://github.com/atanunu/COS-202-SCAPMS"
+    run.append(text)
+    link.append(run)
+    p._p.append(link)
+    paragraph("The private repository contains src/ for C++ headers and implementation, data/ for fictional input files, tests/ for automated checks, scripts/ for build tools, output/screenshots/ for GUI evidence and docs/diagrams/ for UML source, PNG and PDF. Access must be granted to the assessor.")
+    target = out / "SCAPMS-project-report.docx"
+    doc.save(target)
+    print(target)
+    raise SystemExit(0)
 page()
 heading("2.0 UML AND SYSTEM DESIGN",1)
 paragraph("The diagram shows inheritance, interface realization, composition and the main service dependencies. Each patient can be associated with zero or more appointments through a stable patient ID.")

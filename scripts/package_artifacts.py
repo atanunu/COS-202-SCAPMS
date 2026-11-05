@@ -16,7 +16,7 @@ with zipfile.ZipFile(binary,"w",zipfile.ZIP_DEFLATED) as archive:
             archive.write(path,Path("SCAPMS")/path.relative_to(root/"dist/SCAPMS-v3"))
 sources=[]
 for directory in ["src","tests","scripts","docs","data","licenses","output/pdf","output/docx","output/screenshots"]:
-    sources.extend(p for p in (root/directory).rglob("*") if p.is_file() and "__pycache__" not in p.parts)
+    sources.extend(p for p in (root/directory).rglob("*") if p.is_file() and "__pycache__" not in p.parts and not p.name.startswith("~$"))
 sources.extend(root/p for p in ["CMakeLists.txt","README.md","THIRD_PARTY_NOTICES.md","Launch-SCAPMS.cmd",".clang-format",".gitignore","output/test-results.txt","output/test-results.xml"])
 with zipfile.ZipFile(source,"w",zipfile.ZIP_DEFLATED) as archive:
     for path in sorted(sources):
@@ -25,5 +25,5 @@ for path in [binary,source]:
     with zipfile.ZipFile(path) as archive:
         assert archive.testzip() is None
     print(path.name, path.stat().st_size, "bytes")
-files=[binary,source,root/"output/pdf/SCAPMS-assessment.pdf",root/"output/docx/SCAPMS-assessment.docx"]
+files=[binary,source,root/"output/pdf/SCAPMS-assessment.pdf",root/"output/docx/SCAPMS-assessment.docx",root/"output/pdf/SCAPMS-project-report.pdf",root/"output/docx/SCAPMS-project-report.docx"]
 (out/"SHA256SUMS.txt").write_text("\n".join(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+p.name for p in files)+"\n",encoding="utf-8")

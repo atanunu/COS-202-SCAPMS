@@ -93,8 +93,11 @@ Enter opens details for a selected table row. View changes the text size.
 
 - docs/demonstration-guide.md: reproducible walkthrough.
 - docs/requirements.md: assessment and enhancement coverage.
-- docs/classes.mmd: editable class diagram.
-- output/docx/SCAPMS-assessment.docx: editable report, UML, screenshots and source.
+- docs/diagrams/: editable UML source and rendered PNG/PDF diagrams.
+- output/screenshots/: twelve GUI evidence images.
+- output/docx/SCAPMS-project-report.docx: standalone three-page editable report.
+- output/pdf/SCAPMS-project-report.pdf: standalone three-page report for submission.
+- output/docx/SCAPMS-assessment.docx: combined submission containing the report, UML, screenshots and source listings.
 - output/test-results.txt and .xml: recorded test results.
 - output/SCAPMS-Windows.zip and SCAPMS-Source.zip: application and source packages.
 
@@ -102,3 +105,5 @@ Student identity fields in the Word submission remain editable placeholders.
 Demo data can be regenerated using scripts/make_sample.py and
 scripts/make_benchmark.py; both contain fictional records.
 Runtime notices are in licenses and THIRD_PARTY_NOTICES.md.
+
+The project repository is https://github.com/atanunu/COS-202-SCAPMS (private). Grant the assessor access before submission. The supplied brief asks for supporting materials and a 2–3-page report in one PDF. The standalone report supports the requested GitHub-based handoff, while SCAPMS-assessment.pdf retains the combined submission option.
