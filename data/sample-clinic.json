@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 3,
+  "nextPatientId": 9,
+  "nextAppointmentId": 9,
+  "patients": [
+    {
+      "id": "P0001",
+      "name": "Ada Okafor",
+      "age": 23,
+      "contact": "patient1@example.test",
+      "category": "General",
+      "reason": "Routine health review",
+      "urgency": 1,
+      "previousVisit": ""
+    },
+    {
+      "id": "P0002",
+      "name": "Tunde Bello",
+      "age": 31,
+      "contact": "patient2@example.test",
+      "category": "Emergency",
+      "reason": "Urgent assessment",
+      "urgency": 4,
+      "previousVisit": ""
+    },
+    {
+      "id": "P0003",
+      "name": "Zainab Musa",
+      "age": 27,
+      "contact": "patient3@example.test",
+      "category": "Follow-up",
+      "reason": "Review of previous consultation",
+      "urgency": 1,
+      "previousVisit": "VIS-2026-014"
+    },
+    {
+      "id": "P0004",
+      "name": "Chidi Eze",
+      "age": 20,
+      "contact": "patient4@example.test",
+      "category": "General",
+      "reason": "Wellness screening",
+      "urgency": 1,
+      "previousVisit": ""
+    },
+    {
+      "id": "P0005",
+      "name": "Fatima Ibrahim",
+      "age": 34,
+      "contact": "patient5@example.test",
+      "category": "Follow-up",
+      "reason": "Scheduled review",
+      "urgency": 1,
+      "previousVisit": "VIS-2026-018"
+    },
+    {
+      "id": "P0006",
+      "name": "Emeka Nwosu",
+      "age": 26,
+      "contact": "patient6@example.test",
+      "category": "General",
+      "reason": "General consultation",
+      "urgency": 1,
+      "previousVisit": ""
+    },
+    {
+      "id": "P0007",
+      "name": "Amina Yusuf",
+      "age": 22,
+      "contact": "patient7@example.test",
+      "category": "Emergency",
+      "reason": "Same-day assessment",
+      "urgency": 3,
+      "previousVisit": ""
+    },
+    {
+      "id": "P0008",
+      "name": "Samuel Adeyemi",
+      "age": 29,
+      "contact": "patient8@example.test",
+      "category": "General",
+      "reason": "Health screening",
+      "urgency": 1,
+      "previousVisit": ""
+    }
+  ],
+  "appointments": [
+    {
+      "id": "A0001",
+      "patientId": "P0001",
+      "service": "General consultation",
+      "start": "2026-11-04T07:18:56.610Z",
+      "durationMinutes": 30,
+      "status": "Completed",
+      "consultationNotes": "Sample consultation completed; routine follow-up recorded.",
+      "changeReason": "",
+      "clinician": "Dr Demo A",
+      "room": "Room 1",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0002",
+      "patientId": "P0003",
+      "service": "Follow-up review",
+      "start": "2026-11-04T08:08:56.610Z",
+      "durationMinutes": 30,
+      "status": "Completed",
+      "consultationNotes": "Sample consultation completed; routine follow-up recorded.",
+      "changeReason": "",
+      "clinician": "Dr Demo B",
+      "room": "Room 2",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0003",
+      "patientId": "P0001",
+      "service": "Health screening",
+      "start": "2026-11-03T09:48:56.610Z",
+      "durationMinutes": 30,
+      "status": "Completed",
+      "consultationNotes": "Sample consultation completed; routine follow-up recorded.",
+      "changeReason": "",
+      "clinician": "Dr Demo A",
+      "room": "Room 1",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0004",
+      "patientId": "P0002",
+      "service": "Emergency review",
+      "start": "2026-11-04T09:13:56.610Z",
+      "durationMinutes": 30,
+      "status": "Checked in",
+      "consultationNotes": "",
+      "changeReason": "",
+      "clinician": "Dr Demo B",
+      "room": "Room 2",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0005",
+      "patientId": "P0005",
+      "service": "Follow-up review",
+      "start": "2026-11-04T10:08:56.610Z",
+      "durationMinutes": 30,
+      "status": "Checked in",
+      "consultationNotes": "",
+      "changeReason": "",
+      "clinician": "Dr Demo A",
+      "room": "Room 1",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0006",
+      "patientId": "P0004",
+      "service": "Health screening",
+      "start": "2026-11-04T10:48:56.610Z",
+      "durationMinutes": 30,
+      "status": "Checked in",
+      "consultationNotes": "",
+      "changeReason": "",
+      "clinician": "Dr Demo B",
+      "room": "Room 2",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0007",
+      "patientId": "P0006",
+      "service": "General consultation",
+      "start": "2026-11-04T11:48:56.610Z",
+      "durationMinutes": 30,
+      "status": "Cancelled",
+      "consultationNotes": "",
+      "changeReason": "Sample cancellation",
+      "clinician": "Dr Demo A",
+      "room": "Room 1",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    },
+    {
+      "id": "A0008",
+      "patientId": "P0008",
+      "service": "Health screening",
+      "start": "2026-11-05T09:48:56.610Z",
+      "durationMinutes": 30,
+      "status": "Scheduled",
+      "consultationNotes": "",
+      "changeReason": "",
+      "clinician": "Dr Demo B",
+      "room": "Room 2",
+      "walkIn": false,
+      "corrections": [],
+      "consultationStarted": "",
+      "completedAt": ""
+    }
+  ],
+  "waitingQueue": [
+    {
+      "patientId": "P0002",
+      "arrivedAt": "2026-11-04T09:28:56.610Z",
+      "appointmentId": "A0004"
+    },
+    {
+      "patientId": "P0005",
+      "arrivedAt": "2026-11-04T09:38:56.610Z",
+      "appointmentId": "A0005"
+    },
+    {
+      "patientId": "P0004",
+      "arrivedAt": "2026-11-04T09:43:56.610Z",
+      "appointmentId": "A0006"
+    }
+  ],
+  "clinicians": [
+    "Dr Demo A",
+    "Dr Demo B"
+  ],
+  "rooms": [
+    "Room 1",
+    "Room 2"
+  ],
+  "archivedPatients": [],
+  "users": [],
+  "audit": []
+}

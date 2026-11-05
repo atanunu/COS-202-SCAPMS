@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite name="ClinicTests" timestamp="2026&#x002D;11&#x002D;04T17:07:38" hostname="LAPTOP&#x002D;O10N2OPA" tests="31" failures="0" errors="0" skipped="0" time="14.531">
+  <properties>
+    <property name="QTestVersion" value="6.8.3"/>
+    <property name="QtVersion" value="6.8.3"/>
+    <property name="QtBuild" value="Qt 6.8.3 (x86_64&#x002D;little_endian&#x002D;llp64 shared (dynamic) release build; by GCC 13.1.0)"/>
+  </properties>
+  <testcase name="initTestCase" classname="ClinicTests" time="0.000"/>
+  <testcase name="patientValidationAndPolymorphism" classname="ClinicTests" time="0.001"/>
+  <testcase name="duplicateAndFailedOperationAreAtomic" classname="ClinicTests" time="0.000"/>
+  <testcase name="cascadeDeleteUndoRestoresSubtypeAndQueue" classname="ClinicTests" time="0.001"/>
+  <testcase name="editUndoPreservesRelationships" classname="ClinicTests" time="0.000"/>
+  <testcase name="fifoAndDuplicateQueue" classname="ClinicTests" time="0.001"/>
+  <testcase name="appointmentLifecycleAndConflicts" classname="ClinicTests" time="0.001"/>
+  <testcase name="manualAlgorithmsEdgeCasesAndStability" classname="ClinicTests" time="0.001"/>
+  <testcase name="persistenceRoundTripAndMalformedData" classname="ClinicTests" time="0.021"/>
+  <testcase name="idGenerationAfterLoadAndCacheCapacity" classname="ClinicTests" time="0.001"/>
+  <testcase name="reportsAndCsv" classname="ClinicTests" time="0.002"/>
+  <testcase name="guiRegistrationSearchSortQueueAndSave" classname="ClinicTests" time="0.973">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="guiAppointmentDeleteUndoAndSave" classname="ClinicTests" time="0.222">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="rescheduleConflictAndUndo" classname="ClinicTests" time="0.002"/>
+  <testcase name="linkedCheckInConsultationLifecycle" classname="ClinicTests" time="0.001"/>
+  <testcase name="archiveRetainsHistoryAndAudit" classname="ClinicTests" time="0.000"/>
+  <testcase name="staffRolesPasswordsAndLocking" classname="ClinicTests" time="4.979"/>
+  <testcase name="protectedStorageTamperAndRecovery" classname="ClinicTests" time="0.642"/>
+  <testcase name="dateRangeReportTotalsAndEscaping" classname="ClinicTests" time="0.001"/>
+  <testcase name="guiRetainsSearchSortAndSelectionAfterEdit" classname="ClinicTests" time="0.111">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="guiUnsavedPromptAndRescheduling" classname="ClinicTests" time="0.157">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="walkInNoShowAndCorrections" classname="ClinicTests" time="0.004"/>
+  <testcase name="clinicianRoomConflictsAndPersistence" classname="ClinicTests" time="0.002"/>
+  <testcase name="workspaceLockAndExternalChange" classname="ClinicTests" time="0.058"/>
+  <testcase name="portableBackupAuthentication" classname="ClinicTests" time="5.225"/>
+  <testcase name="clinicalPrivacyAndExportPermissions" classname="ClinicTests" time="1.998"/>
+  <testcase name="contactDuplicatesAndPreviousVisitPicker" classname="ClinicTests" time="0.002"/>
+  <testcase name="repeatedBenchmarksUseIdenticalCases" classname="ClinicTests" time="0.001"/>
+  <testcase name="welcomeAndCalendarUi" classname="ClinicTests" time="0.113">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="guiDynamicFieldsAndValidation" classname="ClinicTests" time="0.004">
+    <system-err>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+      <![CDATA[This plugin does not support propagateSizeHints()]]>
+    </system-err>
+  </testcase>
+  <testcase name="cleanupTestCase" classname="ClinicTests" time="0.000"/>
+</testsuite>
